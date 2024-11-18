@@ -1,5 +1,5 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPen, QBrush, QFont
+from PyQt6.QtGui import QPen, QBrush, QFont, QIcon
 from PyQt6.QtWidgets import QWidget, QGraphicsView, QGraphicsScene, QLabel, QScrollArea
 from PyQt6 import uic
 
@@ -12,8 +12,9 @@ class VentanaGrafico(QWidget):
     def __init__(self, puntos):
         super().__init__()
         uic.loadUi('graphic.ui', self)
+        self.setWindowTitle("Gráfico")
+        self.setWindowIcon(QIcon('imgPlanoCartesiano.png'))
 
-        # Crear el gráfico en la ventana
         self.crearGrafico(puntos)
 
     def crearGrafico(self, puntos):

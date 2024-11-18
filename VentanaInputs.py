@@ -1,4 +1,6 @@
 import sys
+
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QWidget, QLineEdit, QLabel, QGridLayout, QPushButton, QScrollArea, QSpinBox
 from PyQt6 import uic
 from VentanaGrafico import VentanaGrafico
@@ -8,6 +10,8 @@ class VentanaDinamica(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('userinterface.ui', self)
+        self.setWindowTitle("Graficador")
+        self.setWindowIcon(QIcon('imgIcon.png'))
 
         self.ui_spinBox = self.findChild(QSpinBox, 'spinBox')
         self.ui_scrollArea = self.findChild(QScrollArea, 'scrollArea_3')
@@ -60,7 +64,6 @@ class VentanaDinamica(QWidget):
             self.labels[i][0].setText(f"Punto {i + 1}")
 
     def crear_grafico(self):
-        # Obtener los puntos de los QLineEdit
         puntos = []
         for x_input, y_input in zip(self.x_inputs, self.y_inputs):
             try:
@@ -70,7 +73,6 @@ class VentanaDinamica(QWidget):
             except ValueError:
                 continue  # Ignorar entradas no válidas
 
-        # Crear y mostrar la ventana del gráfico
         self.ventana_grafico = VentanaGrafico(puntos)
         self.ventana_grafico.show()
 

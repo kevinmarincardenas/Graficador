@@ -11,8 +11,7 @@ class Punto:
 
     def calculardistancia(self, otropunto):
         distancia = math.sqrt(math.pow(self.__x - otropunto.get_x(), 2) + math.pow(self.__y - otropunto.get_y(), 2))
-        distancia = int(distancia*100) / 100
-        return distancia
+        return round(distancia, 2)
 
     def get_x(self):
         return self.__x
