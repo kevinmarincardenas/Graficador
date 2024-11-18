@@ -16,9 +16,10 @@ lado1 = Lado(punto1, punto2)
 lado2 = Lado(punto2, punto3)
 lado3 = Lado(punto3, punto4)
 lado4 = Lado(punto4, punto1)
+lado5 = Lado(punto3, punto1)
 
 lados_cuadrado = [lado1, lado2, lado3, lado4]
-lados_triangulo = [lado1, lado2, lado3]
+lados_triangulo = [lado1, lado2, lado5]
 
 cuadrado1 = Cuadrado(lados_cuadrado)
 triangulo1 = Triangulo(lados_triangulo)
