@@ -19,7 +19,7 @@ class Figura:
         perimetro = 0
         for lado in self.__lados:
             perimetro += lado.calcular_longitud()
-        return perimetro
+        return round(perimetro, 2)
 
     def get_lados(self):
         return self.__lados
