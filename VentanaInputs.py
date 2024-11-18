@@ -19,7 +19,6 @@ class VentanaDinamica(QWidget):
         self.ui_scrollAreaWidgetContents = self.ui_scrollArea.widget()
         self.ui_gridLayout = QGridLayout(self.ui_scrollAreaWidgetContents)
 
-        # Cargar el botón y conectar la señal
         self.ui_btnCrearGrafico = self.findChild(QPushButton, 'btnCrearGrafico')
         self.ui_btnCrearGrafico.clicked.connect(self.crear_grafico)
 
@@ -59,7 +58,6 @@ class VentanaDinamica(QWidget):
             y_label.deleteLater()
             y_input.deleteLater()
 
-        # Actualizar textos de labels
         for i in range(len(self.labels)):
             self.labels[i][0].setText(f"Punto {i + 1}")
 
@@ -71,7 +69,7 @@ class VentanaDinamica(QWidget):
                 y = (float(y_input.text()))
                 puntos.append((x, y))
             except ValueError:
-                continue  # Ignorar entradas no válidas
+                continue
 
         self.ventana_grafico = VentanaGrafico(puntos)
         self.ventana_grafico.show()

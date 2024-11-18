@@ -4,6 +4,7 @@ from Cuadrado import Cuadrado
 from Figura import Figura
 from Lado import Lado
 from Punto import Punto
+from Triangulo import Triangulo
 
 
 punto1 = Punto(1, 1)
